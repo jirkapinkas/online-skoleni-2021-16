@@ -16,7 +16,7 @@ public class Dog {
 
     private String race;
 
-    private int age;
+    private int age = 0;
 
     public void print() {
         System.out.println("Pejsek:");
