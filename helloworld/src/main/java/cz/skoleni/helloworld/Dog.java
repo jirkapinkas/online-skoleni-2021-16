@@ -10,13 +10,11 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Dog {
+public class Dog extends Animal {
 
     private String name;
 
     private String race;
-
-    private int age = 0;
 
     public void print() {
         System.out.println("Pejsek:");
