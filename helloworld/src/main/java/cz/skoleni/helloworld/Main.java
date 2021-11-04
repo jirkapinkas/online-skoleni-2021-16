@@ -16,6 +16,7 @@ public class Main {
         String json = new Gson().toJson(dog);
         System.out.println(json);
         dog.print();
+        dog.printToFile();
     }
 
 }
