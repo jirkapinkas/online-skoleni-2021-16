@@ -16,6 +16,16 @@ public class Dog extends Animal {
 
     private String race;
 
+    public Dog() {
+
+    }
+
+    public Dog(String name, String race, int age) {
+        this.name = name;
+        this.race = race;
+        setAge(age);
+    }
+
     public void print() {
         System.out.println("Pejsek:");
         System.out.println("Name: " + name);

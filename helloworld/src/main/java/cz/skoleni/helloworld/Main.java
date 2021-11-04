@@ -17,6 +17,8 @@ public class Main {
         System.out.println(json);
         dog.print();
         dog.printToFile();
+        Dog dog2 = new Dog("Puňťa", "Vlkodav", 10);
+        dog2.print();
     }
 
 }
