@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class MainJdbcTemplate {
 
@@ -31,10 +32,53 @@ public class MainJdbcTemplate {
             return item;
         });
 
-        for (Item item : items) {
-            System.out.println(item);
-        }
+        System.out.println("*********************");
+
+        // 1. zpusob
+//        for (Item item : items) {
+//            System.out.println(item);
+//        }
+
+        // 2. zpusob
+//        items.forEach(new ItemPrintConsumer());
+
+        // 3. zpusob
+//        items.forEach(new Consumer<Item>() {
+//            @Override
+//            public void accept(Item item) {
+//                System.out.println(item);
+//            }
+//        });
+
+        // 4. zpusob: Lambda (od Java 8), funguje pro tzv. funkcionalni interfacy
+        // Co je fun. interface? Interface, ktery obsahuje PRAVE JEDNU ABSTRAKTNI METODU!!!
+//        items.forEach((Item item) -> {
+//            System.out.println(item);
+//        });
+
+//        items.forEach((item) -> {
+//            System.out.println(item);
+//        });
+
+//        items.forEach(item -> {
+//            System.out.println(item);
+//        });
+
+        // Nejjednodussi lambda:
+        items.forEach(item -> System.out.println(item));
+
+        // 5. Method reference:
+        items.forEach(System.out::println);
 
     }
 
 }
+
+// 2. zpusob
+//class ItemPrintConsumer implements Consumer<Item> {
+//
+//    @Override
+//    public void accept(Item item) {
+//        System.out.println(item);
+//    }
+//}
