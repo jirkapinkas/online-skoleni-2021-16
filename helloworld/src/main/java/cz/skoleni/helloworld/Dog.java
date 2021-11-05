@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -40,6 +41,15 @@ public class Dog extends Animal {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+//    @Deprecated
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", race='" + race + '\'' +
+                ", age=" + getAge() +
+                '}';
     }
 
 }
